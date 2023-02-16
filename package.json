@@ -1,0 +1,24 @@
+{
+  "name": "ada-school-node-exercies",
+  "version": "1.0.0",
+  "description": "proyecto de ejemplo sobre un servidor en node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "nodemon": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neider-Urbano/ada-school-node-exercies.git"
+  },
+  "author": "neider urbano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neider-Urbano/ada-school-node-exercies/issues"
+  },
+  "homepage": "https://github.com/Neider-Urbano/ada-school-node-exercies#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

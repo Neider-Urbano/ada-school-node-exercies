@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "jugar fútbol",
+    "description": "en la tarde",
+    "state": "completado"
+  },
+  {
+    "id": 2,
+    "name": "ver una serie",
+    "description": "en la plataforma Netflix",
+    "state": "pendiente"
+  },
+  {
+    "id": 3,
+    "name": "Aprenderme la tabla del tres",
+    "description": "",
+    "state": "completado"
+  }
+]
