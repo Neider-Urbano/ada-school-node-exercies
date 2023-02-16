@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Neider-Urbano/ada-school-node-exercies#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "nodemon": "^2.0.20"
   }
 }
