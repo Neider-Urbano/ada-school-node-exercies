@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 var data = require("../data.json");
+const middles = require("./middlewares/middleEdit");
+const { middlePost, middlePut } = middles;
 
-router.post("/", (req, res) => {
+router.post("/", middlePost, (req, res) => {
   const newTask = req.body;
   var idValue = 1;
   if (data.length > 0) {
@@ -15,7 +17,6 @@ router.post("/", (req, res) => {
     state: newTask.state,
   };
   data.push(newJson);
-  console.log(data);
   res.status(200).send("La tarea fue registrada");
 });
 
@@ -30,7 +31,7 @@ router.delete("/:id", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", middlePut, (req, res) => {
   const newTask = req.body;
   const id = req.params.id;
   var encontrado = false;
