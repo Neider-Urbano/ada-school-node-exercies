@@ -2,8 +2,17 @@
 const express = require("express");
 const app = express();
 const port = 4000;
-const data = require("./data.json");
 app.use(express.json());
+
+//middleware a nivel de aplicacion
+app.use((req, res, next) => {
+  if (req.method == "GET" || req.method == "POST" || req.method == "PUT") {
+    next();
+  } else {
+    res.send("Metodo http invalido").status(400);
+  }
+});
+
 const taskVie = require("./src/list-view-router");
 const taskEdit = require("./src/list-edit-router");
 app.use("/task", taskVie);
