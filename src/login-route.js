@@ -14,13 +14,14 @@ const users = [
     rol: "user",
   },
 ];
+
 routerLogin.post("/", (req, res) => {
   const { email } = req.body;
   const user = users.filter((user) => user.email === email);
-  if (user.length < 1) res.send("email invalid");
+  if (user.length < 1) res.status(400).send("email invalid");
   else {
     const accessToken = generateAccessToken(user[0]);
-    res.send(accessToken);
+    res.status(200).send(accessToken);
   }
 });
 

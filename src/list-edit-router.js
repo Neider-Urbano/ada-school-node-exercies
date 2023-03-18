@@ -17,7 +17,7 @@ router.post("/", middlePost, (req, res) => {
     state: newTask.state,
   };
   data.push(newJson);
-  res.status(200).send("La tarea fue registrada");
+  res.status(200).json({ list: data });
 });
 
 router.delete("/:id", (req, res) => {
@@ -47,7 +47,7 @@ router.put("/:id", middlePut, (req, res) => {
   if (encontrado) {
     data = json;
     console.log(data);
-    res.status(200).send("La tarea fue actualizada");
+    res.status(200).json({ list: data });
   } else {
     res.status(400).send("La tarea no fue encontrada");
   }

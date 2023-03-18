@@ -6,7 +6,7 @@ exports.middleToken = (req, res, next) => {
   if (!accessToken) res.send("token denied");
   jwt.verify(accessToken, process.env.SECRET, (err, user) => {
     if (err) {
-      res.send({ error: err });
+      res.status(400).send({ error: err });
     } else {
       req.rol = user.rol;
       next();

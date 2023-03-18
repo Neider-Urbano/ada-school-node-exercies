@@ -22,14 +22,10 @@ const middlePut = (req, res, next) => {
     res.status(400).send("Debes enviar informacion");
   } else {
     let arrayKey = Object.keys(newTask);
-    if (
-      !validateKeys(arrayKey, "id") ||
-      !validateKeys(arrayKey, "name") ||
-      !validateKeys(arrayKey, "state")
-    ) {
+    if (!validateKeys(arrayKey, "name") || !validateKeys(arrayKey, "state")) {
       res
         .status(400)
-        .send("Son requeridas las siguientes propiedades de name, status, id");
+        .send("Son requeridas las siguientes propiedades de name, status");
     } else if (!validateValueKeys(newTask, arrayKey)) {
       res.status(400).send("Algunos valores no son correctos");
     } else {

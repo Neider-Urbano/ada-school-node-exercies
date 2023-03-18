@@ -1,0 +1,69 @@
+### Declarando variables en .rest
+@api=http://localhost:4000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmVpZGVyIiwiZW1haWwiOiJuZWlkZXJAZ21haWwuY29tIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE2NzkxNDY0NzAsImV4cCI6MTY3OTE0NzY3MH0.gSBmtmTCHC05UbunRCBuXzyNJEoDea727Ku5rNl9AXs
+### Atajos de teclado
+// 1. Ctrl + alt + r = enviar request
+// 2. Ctrl + Shift + p y escribir Rest Client : Historial
+
+### GET para ver la bienvenida al servidor
+GET {{api}}
+Content-Type: application/json
+
+### GET para ver la bienvenida al servidor
+POST {{api}}/login
+Content-Type: application/json
+
+{
+    "email":"neider@gmail.com"
+}
+
+### POST para generar mi token
+POST {{api}}/login
+Content-Type: application/json
+
+{
+    "email":"neider@gmail.com"
+}
+
+### POST para crear una nueva tarea
+POST {{api}}/task
+Content-Type: application/json
+authorization: {{token}}
+
+{
+    "name": "desarrollar",
+    "description": "desde la pc",
+    "state": "pendiente"
+}
+
+
+### PUT para actualizar una tarea
+PUT {{api}}/task/2
+Content-Type: application/json
+authorization: {{token}}
+
+{
+    "name": "ver una nueva pelicula",
+    "state": "pendiente"
+}
+
+### DELETE para eliminar una tarea
+DELETE {{api}}/task/1
+Content-Type: application/json
+authorization: {{token}}
+
+### GET para obtener todas las tareas
+GET {{api}}/task
+Content-Type: application/json
+
+### GET para obtener todas las tareas completas
+GET {{api}}/task/complete
+Content-Type: application/json
+
+### GET para obtener todas las tareas pendiente
+GET {{api}}/task/pendiente
+Content-Type: application/json
+
+### GET para obtener una tarea
+GET {{api}}/task/view/3
+Content-Type: application/json

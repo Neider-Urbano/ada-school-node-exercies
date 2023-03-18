@@ -7,6 +7,11 @@ router.get("/", (req, res) => {
   res.status(200).send({ task: data });
 });
 
+router.get("/view/:id", (req, res) => {
+  const task = data.filter((task) => task.id == req.params.id);
+  res.status(200).json({ task: task });
+});
+
 router.get("/:state", middleState, (req, res) => {
   const { state } = req.params;
   if (state === "complete") {
@@ -14,7 +19,7 @@ router.get("/:state", middleState, (req, res) => {
   } else if (state === "pendiente") {
     res.redirect("http://localhost:4000/task/state/pendiente");
   } else {
-    res.send("Parametro state erroneo").status(400);
+    res.status(400).send("Parametro state erroneo");
   }
 });
 
